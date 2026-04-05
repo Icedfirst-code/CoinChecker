@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoinChecker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="projectName">
+      <!--Left Nav Bar-->
+      <div class="nav-left">
+        <a href="#" class="brand-name"
+          ><img
+            class="logo"
+            src="coinchecker-removebg-preview.png"
+            alt=""
+          />CoinChecker
+        </a>
+        <nav>
+          <ul>
+            <li>Cryptocurrencies</li>
+            <li>Exchange</li>
+            <li>NFTs</li>
+            <li>Learning</li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--Right Nav Bar-->
+      <div class="nav-right">
+        <a href="">Candy</a>
+        <a href="">Portfolio</a>
+        <button
+          id="theme-toggle"
+          class="theme-btn"
+          aria-label="Toggle Dark Mode"
+        >
+          <svg
+            id="moon-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            width="24"
+            height="24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            />
+          </svg>
+
+          <svg
+            id="sun-icon"
+            class="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            width="24"
+            height="24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            />
+          </svg>
+        </button>
+
+        <!--Search bar-->
+        <form action="search">
+          <input
+            type="search"
+            class="searchbtn"
+            placeholder="Search crypto here..."
+          />
+        </form>
+      </div>
+    </header>
+
+    <!--trending card-->
+    <section class="trending-row">
+      <div class="trending-card">
+        <div class="card-header">
+          <h4>Bitcoin</h4>
+          <span class="text-green">+2.1%</span>
+        </div>
+        <p class="price">$65,000.00</p>
+      </div>
+
+      <div class="trending-card">
+        <div class="card-header">
+          <h4>Ethereum</h4>
+          <span class="text-green">+1.8%</span>
+        </div>
+        <p class="price">$3,500.00</p>
+      </div>
+
+      <div class="trending-card">
+        <div class="card-header">
+          <h4>Solana</h4>
+          <span class="text-green">+5.4%</span>
+        </div>
+        <p class="price">$145.00</p>
+      </div>
+    </section>
+
+    <!--Table-->
+    <div class="tablecontainer">
+      <table class="cryptotable">
+        <!--table Head-->
+        <thead>
+          <tr>
+            <th>Coin name</th>
+            <th>price</th>
+            <th>1h %</th>
+            <th>24h %</th>
+            <th>24 Volume</th>
+            <th>Market Cap</th>
+          </tr>
+        </thead>
+
+        <!--table Body-->
+        <tbody class="crypto data" id="crypto-table-body">
+          <tr></tr>
+
+          <tr></tr>
+
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
