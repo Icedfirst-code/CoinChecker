@@ -1,6 +1,4 @@
-/* =========================================
-   1. COLOR VARIABLES (Light & Dark Mode)
-   ========================================= */
+
 :root {
   --bg-color: #ffffff;
   --text-color: #111827;
@@ -36,24 +34,20 @@ body.dark-mode {
   --btn-hover: #374151;
 
   /* NEW: Search Bar Colors (Dark Mode) */
-  --input-bg: #1f2937; /* Dark background */
-  --input-border: #374151; /* Subtle gray border */
-  --input-text: #f9fafb; /* White text */
+  --input-bg: #1f2937;
+  --input-border: #374151; 
+  --input-text: #f9fafb; 
 }
-/* =========================================
-   2. MAIN STYLES
-   ========================================= */
+
 body {
   font-family: "Inter Tight", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 
-  /* Applied Variables */
   background-color: var(--bg-color);
   color: var(--text-color);
 
-  /* Smooth transition when clicking the toggle */
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -123,9 +117,7 @@ a {
   border-color: #60a5fa; /* Turns blue */
   box-shadow: 0 0 5px rgba(96, 165, 250, 0.4); /* Adds a subtle blue glow */
 }
-/* =========================================
-   3. TRENDING CARDS
-   ========================================= */
+
 .trending-row {
   display: flex;
   gap: 20px;
