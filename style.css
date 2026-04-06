@@ -249,3 +249,25 @@ a {
   /* 4. Reset the nudge to let flexbox center it naturally */
   transform: translateY(0px);
 }
+
+/* This rule ONLY applies when the screen is 768px wide or smaller (typical tablet/phone size) */
+@media (max-width: 768px) {
+  
+  /* 1. Stack the crypto cards on top of each other */
+  .trending-row {
+    flex-direction: column; 
+    gap: 15px; /* Adds space between the stacked cards */
+  }
+
+  /* 2. Stack the header navigation */
+  .projectName {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left instead of the center */
+    gap: 15px;
+  }
+
+  /* 3. Hide the text links to save space (Optional, but common on mobile) */
+  .nav-left nav {
+    display: none; /* You could replace this with a hamburger menu later! */
+  }
+}
