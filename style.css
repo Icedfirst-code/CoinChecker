@@ -250,24 +250,39 @@ a {
   transform: translateY(0px);
 }
 
-/* This rule ONLY applies when the screen is 768px wide or smaller (typical tablet/phone size) */
 @media (max-width: 768px) {
-  
-  /* 1. Stack the crypto cards on top of each other */
-  .trending-row {
-    flex-direction: column; 
-    gap: 15px; /* Adds space between the stacked cards */
-  }
-
-  /* 2. Stack the header navigation */
+  /* 1. Stack the main header items */
   .projectName {
     flex-direction: column;
-    align-items: flex-start; /* Aligns items to the left instead of the center */
+    align-items: stretch;
     gap: 15px;
+    padding: 15px;
   }
 
-  /* 3. Hide the text links to save space (Optional, but common on mobile) */
+  /* 2. Hide the text links to save space (You can add a hamburger menu later!) */
   .nav-left nav {
-    display: none; /* You could replace this with a hamburger menu later! */
+    display: none;
+  }
+
+  /* 3. Center the brand name and logo */
+  .brand-name {
+    justify-content: center;
+  }
+
+  /* 4. Make the search bar and icons fit nicely */
+  .nav-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .searchbtn {
+    width: 100%; /* Makes the search bar take up remaining space */
+    margin: 0;
+  }
+
+  /* 5. Stack the crypto cards on top of each other */
+  .trending-row {
+    flex-direction: column;
+    gap: 15px;
   }
 }
