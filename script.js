@@ -125,7 +125,7 @@ themeToggleBtn.addEventListener("click", () => {
 async function getLivePrices() {
   try {
     const url =
-      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd";
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true";
     const response = await fetch(url);
     const data = await response.json();
 
@@ -151,6 +151,33 @@ async function getLivePrices() {
     document.getElementById("bitcoin-price").textContent = btcPrice;
     document.getElementById("ethereum-price").textContent = ethPrice;
     document.getElementById("solana-price").textContent = solPrice;
+
+    const btcChange = data.bitcoin.usd_24h_change;
+    const ethChange = data.ethereum.usd_24h_change;
+    const solChange = data.solana.usd_24h_change;
+
+    // A tiny helper function to format the percentage and change the color
+    function updatePercentageUI(elementId, changeValue) {
+      const element = document.getElementById(elementId);
+
+      // Round to 2 decimal places and add the % sign
+      const formattedValue = changeValue.toFixed(2) + "%";
+
+      if (changeValue >= 0) {
+        // If it's positive, add a "+" sign and make it green
+        element.textContent = "+" + formattedValue;
+        element.className = "text-green";
+      } else {
+        // If it's negative, it already has a "-" sign, just make it red
+        element.textContent = formattedValue;
+        element.className = "text-red";
+      }
+    }
+
+    // Apply the helper function to our three coins
+    updatePercentageUI("bitcoin-change", btcChange);
+    updatePercentageUI("ethereum-change", ethChange);
+    updatePercentageUI("solana-change", solChange);
   } catch (error) {
     console.error("Error fetching the live prices:", error);
     // If the internet is down, display an error message on the cards
