@@ -161,28 +161,29 @@ a {
 }
 
 .tablecontainer {
-  overflow-x: auto;
-  /* We moved the border to the container instead of the table! */
+  width: 100%; /* Ensures the box doesn't push past the screen */
+  overflow-x: auto; /* This is the magic command that creates the horizontal scrollbar! */
+  -webkit-overflow-scrolling: touch; /* Adds smooth momentum scrolling on mobile */
+
+  /* Keep your existing border and shadow rules here... */
   border: 1px solid var(--table-outer-border);
   border-radius: 7px;
-  overflow: hidden; /* This stops the table inside from poking out of the rounded corners */
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
-  transition: border-color 0.3s ease;
 }
 
 .cryptotable {
   width: 100%;
+  min-width: 600px; /* Forces the table to stay at least 600px wide, triggering the scrollbar on smaller screens */
   border-collapse: collapse;
-  border: none; /* Removed the outer border from the table itself */
 }
 
 .cryptotable th,
 .cryptotable td {
-  padding: 8px 12px;
+  padding: 12px 15px; /* Gave it a bit more breathing room */
   text-align: left;
-  border: 1px solid var(--table-inner-border);
+  border-bottom: 1px solid var(--table-inner-border); /* Just a bottom border usually looks cleaner on mobile! */
+  white-space: nowrap; /* Forces text to stay on one line */
 }
-
 /* Text Colors */
 .text-green {
   color: #10b981;
