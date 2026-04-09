@@ -121,3 +121,43 @@ themeToggleBtn.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
   }
 });
+
+async function getLivePrices() {
+  try {
+    const url =
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd";
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const btcPrice =
+      "$" +
+      data.bitcoin.usd.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    const ethPrice =
+      "$" +
+      data.ethereum.usd.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    const solPrice =
+      "$" +
+      data.solana.usd.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
+    document.getElementById("bitcoin-price").textContent = btcPrice;
+    document.getElementById("ethereum-price").textContent = ethPrice;
+    document.getElementById("solana-price").textContent = solPrice;
+  } catch (error) {
+    console.error("Error fetching the live prices:", error);
+    // If the internet is down, display an error message on the cards
+    document.getElementById("bitcoin-price").textContent = "Error loading";
+  }
+}
+
+getLivePrices();
+
+setInterval(getLivePrices, 60000);
