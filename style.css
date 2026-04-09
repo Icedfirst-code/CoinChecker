@@ -70,23 +70,23 @@ a {
   margin-bottom: 15px;
   padding: 3px;
 
-  /* Applied Variable */
+
   border-color: var(--header-border);
 }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 
-.nav-left ul {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
+  .nav-left nav {
+    display: block; 
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-left ul {
+    flex-direction: column;
+    align-items: center; 
+    gap: 15px;
+    padding: 0;
+  }
 
 .nav-right {
   display: flex;
